@@ -1,6 +1,213 @@
+/* Global styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  color: #111827;
+  background: #f3f4f6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+}
+
+/* Header & navigation */
+.site-header {
+  background: linear-gradient(135deg, #0f766e, #14b8a6);
+  color: #ecfeff;
+  padding: 1rem 1.25rem 0.75rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+
+.logo-title {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.logo-title h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.subtitle {
+  margin: 0.25rem 0 0.75rem;
+  font-size: 0.95rem;
+  opacity: 0.95;
+}
+
+.main-nav {
+  border-top: 1px solid rgba(240, 253, 250, 0.35);
+  margin-top: 0.5rem;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.35rem 0 0;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  max-width: 960px;
+  margin-inline: auto;
+}
+
+.main-nav a {
+  display: inline-block;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+.main-nav a:hover {
+  background: rgba(240, 253, 250, 0.15);
+  border-color: rgba(240, 253, 250, 0.4);
+}
+
+.main-nav a.active {
+  background: #ecfeff;
+  color: #0f766e;
+  border-color: transparent;
+  font-weight: 600;
+}
+
+/* Hero section (home) */
+.hero {
+  margin-top: 2rem;
+  background: #ecfeff;
+  border-radius: 1rem;
+  padding: 1.75rem 1.5rem;
+  box-shadow: 0 12px 30px rgba(15, 118, 110, 0.15);
+}
+
+.hero-text h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.hero-text p {
+  margin-top: 0.3rem;
+}
+
+.byline {
+  margin-top: 1.1rem;
+  font-size: 0.95rem;
+  color: #065f46;
+}
+
+/* Page headers (inner pages) */
+.page-header {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.page-header h2 {
+  margin-bottom: 0.4rem;
+}
+
+/* Layout helpers */
+.two-column {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .two-column {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Cards / grids */
+.cards-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .cards-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 0.9rem;
+  padding: 1.25rem 1.15rem;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.placeholder-list {
+  padding-left: 1.1rem;
+}
+
+.placeholder-list li {
+  margin-bottom: 0.25rem;
+}
+
+/* Contact page */
+.contact-section {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .contact-section {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+  }
+}
+
+.contact-info,
+.contact-note {
+  background: #ffffff;
+  border-radius: 0.9rem;
+  padding: 1.25rem 1.15rem;
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid #d1d5db;
+  margin-top: 2.5rem;
+  padding: 1.25rem 1.25rem 1.75rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
   color: #333;
+  text-align: center;
+}
+
+h1{
   text-align: center;
 }
