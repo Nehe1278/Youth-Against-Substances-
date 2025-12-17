@@ -13,6 +13,10 @@ body {
   background: #f3f4f6;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -30,7 +34,7 @@ main {
 
 /* Header & navigation */
 .site-header {
-  background: linear-gradient(135deg, #0f766e, #14b8a6);
+  background: linear-gradient(135deg, #3a4f8a, #4874b0);
   color: #ecfeff;
   padding: 1rem 1.25rem 0.75rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
@@ -62,30 +66,38 @@ main {
   margin: 0;
   padding: 0.35rem 0 0;
   display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
+  gap: 0;
   max-width: 960px;
   margin-inline: auto;
 }
 
+.main-nav li {
+  flex: 1;
+}
+
 .main-nav a {
-  display: inline-block;
-  padding: 0.35rem 0.8rem;
-  border-radius: 999px;
+  display: block;
+  padding: 0.55rem 0.8rem;
   font-size: 0.9rem;
+  text-align: center;
   background: transparent;
-  border: 1px solid transparent;
+  border-left: 1px solid rgba(240, 253, 250, 0.35);
 }
 
 .main-nav a:hover {
   background: rgba(240, 253, 250, 0.15);
-  border-color: rgba(240, 253, 250, 0.4);
+}
+
+.main-nav a:focus-visible {
+  outline: 2px solid #ecfeff;
+  outline-offset: 2px;
+  background: rgba(236, 254, 255, 0.95);
+  color: #4874b0;
 }
 
 .main-nav a.active {
-  background: #ecfeff;
-  color: #0f766e;
-  border-color: transparent;
+  background: rgba(236, 254, 255, 0.95);
+  color: #4874b0;
   font-weight: 600;
 }
 
@@ -95,7 +107,7 @@ main {
   background: #ecfeff;
   border-radius: 1rem;
   padding: 1.75rem 1.5rem;
-  box-shadow: 0 12px 30px rgba(15, 118, 110, 0.15);
+  box-shadow: 0 12px 30px rgba(72, 116, 176, 0.15);
 }
 
 .hero-text h2 {
@@ -110,7 +122,7 @@ main {
 .byline {
   margin-top: 1.1rem;
   font-size: 0.95rem;
-  color: #065f46;
+  color: #4874b0;
 }
 
 /* Page headers (inner pages) */
@@ -155,10 +167,17 @@ main {
   border-radius: 0.9rem;
   padding: 1.25rem 1.15rem;
   box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .card h3 {
   margin-top: 0;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.14);
 }
 
 .placeholder-list {
@@ -191,6 +210,77 @@ main {
   box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
 }
 
+/* Contact form */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 0.9rem;
+}
+
+.form-field label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  font: inherit;
+}
+
+.form-field input:focus-visible,
+.form-field textarea:focus-visible {
+  outline: 2px solid #4874b0;
+  outline-offset: 1px;
+  border-color: #4874b0;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 0.25rem;
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  border: none;
+  background: #4874b0;
+  color: #ecfeff;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.btn:hover {
+  background: #3a4f8a;
+}
+
+.btn:focus-visible {
+  outline: 2px solid #ecfeff;
+  outline-offset: 2px;
+}
+
+.form-status {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.form-status.error {
+  color: #b91c1c;
+}
+
+.form-status.success {
+  color: #166534;
+}
+
+.contact-disclaimer {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: #4b5563;
+}
+
 /* Footer */
 .site-footer {
   border-top: 1px solid #d1d5db;
@@ -201,13 +291,36 @@ main {
   color: #4b5563;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  color: #333;
-  text-align: center;
+/* Back to top button */
+.back-to-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  border: none;
+  background: #4874b0;
+  color: #ecfeff;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.25);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-h1{
-  text-align: center;
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.back-to-top:focus-visible {
+  outline: 2px solid #ecfeff;
+  outline-offset: 2px;
 }

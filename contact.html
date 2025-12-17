@@ -40,10 +40,26 @@
       </div>
 
       <div class="contact-note">
-        <p>
-          You can also talk to us in person at meetings or around campus. If you are sharing
-          personal or sensitive information, we encourage you to use an adult you trust and
-          school-approved channels.
+        <h3>Send Us a Message</h3>
+        <form id="contact-form" novalidate>
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+          <div class="form-field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn">Send Message</button>
+          <p id="contact-status" class="form-status" aria-live="polite"></p>
+        </form>
+        <p class="contact-disclaimer">
+          This form does not replace emergency or professional help. For urgent situations,
+          please contact a trusted adult or emergency services.
         </p>
       </div>
     </section>
@@ -52,6 +68,9 @@
   <footer class="site-footer">
     <p>&copy; Youth Against Substances (YAS)</p>
   </footer>
+
+  <button type="button" class="back-to-top" aria-label="Back to top">↑</button>
+  <script src="script.js"></script>
 </body>
 </html>
 
