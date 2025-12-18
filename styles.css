@@ -324,3 +324,54 @@ main {
   outline: 2px solid #ecfeff;
   outline-offset: 2px;
 }
+
+/* Scholarship tabs navigation */
+.scholarship-tabs {
+  display: flex;
+  gap: 0;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #d1d5db;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tab-button {
+  padding: 0.75rem 1.25rem;
+  border: none;
+  background: transparent;
+  color: #4b5563;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+.tab-button:hover {
+  color: #4874b0;
+  background: rgba(72, 116, 176, 0.05);
+}
+
+.tab-button.active {
+  color: #4874b0;
+  border-bottom-color: #4874b0;
+  font-weight: 600;
+}
+
+.tab-button:focus-visible {
+  outline: 2px solid #4874b0;
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}

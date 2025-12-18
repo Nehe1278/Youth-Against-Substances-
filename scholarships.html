@@ -33,49 +33,76 @@
       </p>
     </section>
 
-    <!-- Virginia (In-State) Scholarships -->
-    <section class="card">
-      <h3>Virginia (In-State) Scholarships</h3>
-      <p>Scholarships for students living in or attending school in Virginia.</p>
-      <ul class="placeholder-list">
-        <li>Add in-state scholarship 1 here</li>
-        <li>Add in-state scholarship 2 here</li>
-        <li>Add more Virginia scholarship entries as needed</li>
-      </ul>
+    <!-- Tab Navigation -->
+    <nav class="scholarship-tabs" role="tablist">
+      <button class="tab-button active" role="tab" aria-selected="true" data-tab="fgli">FGLI Scholarships</button>
+      <button class="tab-button" role="tab" aria-selected="false" data-tab="virginia">Virginia (In-State)</button>
+      <button class="tab-button" role="tab" aria-selected="false" data-tab="competitive">Competitive / National</button>
+      <button class="tab-button" role="tab" aria-selected="false" data-tab="major-specific">Major-Specific</button>
+    </nav>
+
+    <!-- FGLI Scholarships Tab Content -->
+    <section class="tab-content active" id="fgli" role="tabpanel">
+      <div class="card">
+        <h3>FGLI Scholarships</h3>
+        <p>Scholarships specifically for first-generation low-income (FGLI) students.</p>
+        <ul class="placeholder-list">
+          <li>Add FGLI scholarship 1 here</li>
+          <li>Add FGLI scholarship 2 here</li>
+          <li>Add more FGLI scholarship entries as needed</li>
+        </ul>
+      </div>
     </section>
 
-    <!-- Competitive / National Scholarships -->
-    <section class="card">
-      <h3>Competitive / National Scholarships</h3>
-      <p>Scholarships that are highly competitive or open to students across the U.S.</p>
-      <ul class="placeholder-list">
-        <li>Add competitive or national scholarship 1 here</li>
-        <li>Add competitive or national scholarship 2 here</li>
-        <li>Add more competitive scholarship entries as needed</li>
-      </ul>
+    <!-- Virginia (In-State) Scholarships Tab Content -->
+    <section class="tab-content" id="virginia" role="tabpanel">
+      <div class="card">
+        <h3>Virginia (In-State) Scholarships</h3>
+        <p>Scholarships for students living in or attending school in Virginia.</p>
+        <ul class="placeholder-list">
+          <li>Add in-state scholarship 1 here</li>
+          <li>Add in-state scholarship 2 here</li>
+          <li>Add more Virginia scholarship entries as needed</li>
+        </ul>
+      </div>
     </section>
 
-    <!-- Major-Specific Scholarships -->
-    <section class="card">
-      <h3>Major-Specific Scholarships</h3>
-      <p>Scholarships that are specific to certain majors or career paths.</p>
+    <!-- Competitive / National Scholarships Tab Content -->
+    <section class="tab-content" id="competitive" role="tabpanel">
+      <div class="card">
+        <h3>Competitive / National Scholarships</h3>
+        <p>Scholarships that are highly competitive or open to students across the U.S.</p>
+        <ul class="placeholder-list">
+          <li>Add competitive or national scholarship 1 here</li>
+          <li>Add competitive or national scholarship 2 here</li>
+          <li>Add more competitive scholarship entries as needed</li>
+        </ul>
+      </div>
+    </section>
 
-      <h4>Engineering</h4>
-      <ul class="placeholder-list">
-        <li>Add engineering scholarship 1 here</li>
-        <li>Add engineering scholarship 2 here</li>
-      </ul>
+    <!-- Major-Specific Scholarships Tab Content -->
+    <section class="tab-content" id="major-specific" role="tabpanel">
+      <div class="card">
+        <h3>Major-Specific Scholarships</h3>
+        <p>Scholarships that are specific to certain majors or career paths.</p>
 
-      <h4>Law</h4>
-      <ul class="placeholder-list">
-        <li>Add law scholarship 1 here</li>
-        <li>Add law scholarship 2 here</li>
-      </ul>
+        <h4>Engineering</h4>
+        <ul class="placeholder-list">
+          <li>Add engineering scholarship 1 here</li>
+          <li>Add engineering scholarship 2 here</li>
+        </ul>
 
-      <h4>Other Majors</h4>
-      <ul class="placeholder-list">
-        <li>Add scholarships for other majors (e.g., medicine, business, education)</li>
-      </ul>
+        <h4>Law</h4>
+        <ul class="placeholder-list">
+          <li>Add law scholarship 1 here</li>
+          <li>Add law scholarship 2 here</li>
+        </ul>
+
+        <h4>Other Majors</h4>
+        <ul class="placeholder-list">
+          <li>Add scholarships for other majors (e.g., medicine, business, education)</li>
+        </ul>
+      </div>
     </section>
   </main>
 
@@ -85,6 +112,7 @@
 
   <button type="button" class="back-to-top" aria-label="Back to top">↑</button>
   <script src="script.js"></script>
+  <script src="scholarships.js"></script>
 </body>
 </html>
 
