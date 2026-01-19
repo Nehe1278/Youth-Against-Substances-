@@ -11,6 +11,11 @@ body {
   line-height: 1.6;
   color: #111827;
   background: #f3f4f6;
+  overflow-x: hidden;
+}
+
+body.menu-open {
+  overflow: hidden;
 }
 
 html {
@@ -38,6 +43,14 @@ main {
   color: #ecfeff;
   padding: 1rem 1.25rem 0.75rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: box-shadow 0.3s ease;
+}
+
+.site-header.scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 .logo-title {
@@ -56,9 +69,51 @@ main {
   opacity: 0.95;
 }
 
+/* Mobile menu toggle button */
+.mobile-menu-toggle {
+  display: none;
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  background: transparent;
+  border: none;
+  color: #ecfeff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
+  flex-direction: column;
+  gap: 4px;
+  width: 30px;
+  height: 30px;
+  justify-content: center;
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #ecfeff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
 .main-nav {
   border-top: 1px solid rgba(240, 253, 250, 0.35);
   margin-top: 0.5rem;
+  transition: transform 0.3s ease;
 }
 
 .main-nav ul {
@@ -82,10 +137,30 @@ main {
   text-align: center;
   background: transparent;
   border-left: 1px solid rgba(240, 253, 250, 0.35);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-nav a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(240, 253, 250, 0.15);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.main-nav a:hover::before {
+  left: 0;
 }
 
 .main-nav a:hover {
   background: rgba(240, 253, 250, 0.15);
+  transform: translateY(-1px);
 }
 
 .main-nav a:focus-visible {
@@ -101,6 +176,58 @@ main {
   font-weight: 600;
 }
 
+/* Mobile menu styles */
+@media (max-width: 767px) {
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .logo-title {
+    padding-right: 3rem;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: linear-gradient(135deg, #3a4f8a, #4874b0);
+    border-top: none;
+    margin-top: 0;
+    padding: 4rem 0 1rem;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    transition: right 0.3s ease;
+  }
+
+  .main-nav.nav-open {
+    right: 0;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    padding: 0;
+    gap: 0;
+  }
+
+  .main-nav li {
+    flex: none;
+    border-bottom: 1px solid rgba(240, 253, 250, 0.2);
+  }
+
+  .main-nav a {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    border-left: none;
+    border-radius: 0;
+  }
+
+  .main-nav a::before {
+    display: none;
+  }
+}
+
 /* Hero section (home) */
 .hero {
   margin-top: 2rem;
@@ -108,15 +235,73 @@ main {
   border-radius: 1rem;
   padding: 1.75rem 1.5rem;
   box-shadow: 0 12px 30px rgba(72, 116, 176, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(72, 116, 176, 0.05) 0%, transparent 70%);
+  animation: pulse 8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.hero-text.hero-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .hero-text h2 {
   margin-top: 0;
   margin-bottom: 0.75rem;
+  animation: fadeInUp 0.8s ease 0.2s both;
 }
 
 .hero-text p {
   margin-top: 0.3rem;
+  animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.hero-text p:nth-of-type(2) {
+  animation-delay: 0.6s;
+}
+
+.hero-text .byline {
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .byline {
@@ -167,17 +352,43 @@ main {
   border-radius: 0.9rem;
   padding: 1.25rem 1.15rem;
   box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(72, 116, 176, 0.03), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.card:hover::before,
+.card:focus-within::before {
+  opacity: 1;
 }
 
 .card h3 {
   margin-top: 0;
+  transition: color 0.3s ease;
+}
+
+.card:hover h3,
+.card:focus-within h3 {
+  color: #4874b0;
 }
 
 .card:hover,
 .card:focus-within {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.14);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
 }
 
 .placeholder-list {
@@ -251,10 +462,19 @@ main {
   font-weight: 600;
   cursor: pointer;
   font-size: 0.95rem;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .btn:hover {
   background: #3a4f8a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(72, 116, 176, 0.3);
+}
+
+.btn:active {
+  transform: translateY(0);
 }
 
 .btn:focus-visible {
@@ -262,9 +482,28 @@ main {
   outline-offset: 2px;
 }
 
+/* Ripple effect */
+.btn .ripple,
+.back-to-top .ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  transform: scale(0);
+  animation: ripple-animation 0.6s ease-out;
+  pointer-events: none;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
 .form-status {
   margin-top: 0.5rem;
   font-size: 0.9rem;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .form-status.error {
@@ -273,6 +512,21 @@ main {
 
 .form-status.success {
   color: #166534;
+}
+
+.form-status.fade-in {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .contact-disclaimer {
@@ -310,14 +564,25 @@ main {
   box-shadow: 0 10px 25px rgba(15, 23, 42, 0.25);
   opacity: 0;
   pointer-events: none;
-  transform: translateY(10px);
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transform: translateY(10px) scale(0.9);
+  transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  z-index: 999;
 }
 
 .back-to-top.visible {
   opacity: 1;
   pointer-events: auto;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
+}
+
+.back-to-top:hover {
+  background: #3a4f8a;
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.35);
+}
+
+.back-to-top:active {
+  transform: translateY(0) scale(1);
 }
 
 .back-to-top:focus-visible {
@@ -431,4 +696,54 @@ main {
 .partner-link a:hover {
   color: #3a4f8a;
   text-decoration: underline;
+}
+
+/* Scroll-triggered animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered animation delays for cards */
+.cards-grid .card:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.cards-grid .card:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.cards-grid .card:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.cards-grid .card:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+.cards-grid .card:nth-child(5) {
+  transition-delay: 0.5s;
+}
+
+.cards-grid .card:nth-child(6) {
+  transition-delay: 0.6s;
+}
+
+/* Header scroll effect */
+.site-header.scrolled {
+  padding: 0.75rem 1.25rem 0.5rem;
+}
+
+.site-header.scrolled .logo-title h1 {
+  font-size: 1.4rem;
+}
+
+.site-header.scrolled .subtitle {
+  font-size: 0.85rem;
 }
