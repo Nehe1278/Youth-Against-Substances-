@@ -9,6 +9,9 @@
 </head>
 <body>
   <header class="site-header">
+    <a class="header-logo" href="index.html" aria-label="Youth Against Substances home">
+      <img src="yas-logo.png.png" alt="Youth Against Substances logo">
+    </a>
     <div class="logo-title">
       <h1>Youth Against Substances (YAS)</h1>
       <p class="subtitle">Opportunities and resources for underserved students</p>
@@ -34,41 +37,106 @@
       </p>
     </section>
 
+    <!-- Search and Filter Section -->
+    <section class="search-filter-section">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" placeholder="Search opportunities...">
+        <span class="search-icon">🔍</span>
+      </div>
+      <div class="filter-tags">
+        <button class="filter-tag active" data-filter="all">All</button>
+        <button class="filter-tag" data-filter="scholarships">Scholarships</button>
+        <button class="filter-tag" data-filter="jobs">Jobs & Internships</button>
+        <button class="filter-tag" data-filter="programs">Summer Programs</button>
+      </div>
+    </section>
+
     <section class="cards-grid">
-      <article class="card">
+      <article class="card card-expandable" data-filter="scholarships">
         <h3>Scholarships</h3>
-        <p>Financial support opportunities for high school and college-bound students.</p>
-        <ul class="placeholder-list">
-          <li>Preview scholarship 1</li>
-          <li>Preview scholarship 2</li>
-        </ul>
+        <div class="card-short-content">
+          <p>Financial support opportunities for high school and college-bound students.</p>
+          <ul class="placeholder-list">
+            <li>Preview scholarship 1</li>
+            <li>Preview scholarship 2</li>
+          </ul>
+        </div>
+        <div class="card-full-content" style="display: none;">
+          <p>Financial support opportunities for high school and college-bound students.</p>
+          <ul class="placeholder-list">
+            <li>Preview scholarship 1</li>
+            <li>Preview scholarship 2</li>
+            <li>More scholarship details can go here...</li>
+          </ul>
+        </div>
+        <button class="card-expand-toggle">Read more</button>
         <p>
           <a class="card-link" href="scholarships.html">See all scholarships &rarr;</a>
         </p>
+        <div class="card-actions">
+          <div class="share-buttons">
+            <a href="#" class="share-btn email" data-share="email" aria-label="Share via Email">📧</a>
+            <a href="#" class="share-btn copy" data-share="copy" aria-label="Copy link">🔗</a>
+          </div>
+        </div>
       </article>
 
-      <article class="card">
+      <article class="card card-expandable" data-filter="jobs">
         <h3>Jobs & Internships</h3>
-        <p>Part-time jobs, internships, and leadership roles for students.</p>
-        <ul class="placeholder-list">
-          <li>Preview job or internship 1</li>
-          <li>Preview job or internship 2</li>
-        </ul>
+        <div class="card-short-content">
+          <p>Part-time jobs, internships, and leadership roles for students.</p>
+          <ul class="placeholder-list">
+            <li>Preview job or internship 1</li>
+            <li>Preview job or internship 2</li>
+          </ul>
+        </div>
+        <div class="card-full-content" style="display: none;">
+          <p>Part-time jobs, internships, and leadership roles for students.</p>
+          <ul class="placeholder-list">
+            <li>Preview job or internship 1</li>
+            <li>Preview job or internship 2</li>
+            <li>More job and internship details can go here...</li>
+          </ul>
+        </div>
+        <button class="card-expand-toggle">Read more</button>
         <p>
           <a class="card-link" href="jobs.html">See all jobs & internships &rarr;</a>
         </p>
+        <div class="card-actions">
+          <div class="share-buttons">
+            <a href="#" class="share-btn email" data-share="email" aria-label="Share via Email">📧</a>
+            <a href="#" class="share-btn copy" data-share="copy" aria-label="Copy link">🔗</a>
+          </div>
+        </div>
       </article>
 
-      <article class="card">
+      <article class="card card-expandable" data-filter="programs">
         <h3>Summer Programs</h3>
-        <p>Academic, enrichment, and pre-college programs &mdash; especially for FGLI students.</p>
-        <ul class="placeholder-list">
-          <li>Preview summer program 1</li>
-          <li>Preview summer program 2</li>
-        </ul>
+        <div class="card-short-content">
+          <p>Academic, enrichment, and pre-college programs &mdash; especially for FGLI students.</p>
+          <ul class="placeholder-list">
+            <li>Preview summer program 1</li>
+            <li>Preview summer program 2</li>
+          </ul>
+        </div>
+        <div class="card-full-content" style="display: none;">
+          <p>Academic, enrichment, and pre-college programs &mdash; especially for FGLI students.</p>
+          <ul class="placeholder-list">
+            <li>Preview summer program 1</li>
+            <li>Preview summer program 2</li>
+            <li>More summer program details can go here...</li>
+          </ul>
+        </div>
+        <button class="card-expand-toggle">Read more</button>
         <p>
           <a class="card-link" href="summer-programs.html">See all summer programs &rarr;</a>
         </p>
+        <div class="card-actions">
+          <div class="share-buttons">
+            <a href="#" class="share-btn email" data-share="email" aria-label="Share via Email">📧</a>
+            <a href="#" class="share-btn copy" data-share="copy" aria-label="Copy link">🔗</a>
+          </div>
+        </div>
       </article>
     </section>
   </main>
@@ -79,6 +147,7 @@
 
   <button type="button" class="back-to-top" aria-label="Back to top">↑</button>
   <script src="script.js"></script>
+  <script src="interactive.js"></script>
 </body>
 </html>
 

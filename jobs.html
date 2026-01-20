@@ -9,6 +9,9 @@
 </head>
 <body>
   <header class="site-header">
+    <a class="header-logo" href="index.html" aria-label="Youth Against Substances home">
+      <img src="yas-logo.png.png" alt="Youth Against Substances logo">
+    </a>
     <div class="logo-title">
       <h1>Youth Against Substances (YAS)</h1>
       <p class="subtitle">Opportunities and resources for underserved students</p>
@@ -34,37 +37,235 @@
       </p>
     </section>
 
+    <!-- Search and Filter Section -->
+    <section class="search-filter-section">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" placeholder="Search jobs and internships...">
+        <span class="search-icon">🔍</span>
+      </div>
+      <div class="filter-tags">
+        <button class="filter-tag active" data-filter="all">All</button>
+        <button class="filter-tag" data-filter="jobs">Part-Time Jobs</button>
+        <button class="filter-tag" data-filter="internships">Internships</button>
+        <button class="filter-tag" data-filter="leadership">Leadership Roles</button>
+      </div>
+    </section>
+
     <section class="cards-grid">
-      <article class="card">
+      <article class="card card-expandable" data-filter="jobs">
         <h3>Part-Time Jobs</h3>
-        <p>Part-time employment opportunities for high school and college students.</p>
-        <ul class="placeholder-list">
-          <li>Add part-time job 1 here</li>
-          <li>Add part-time job 2 here</li>
-          <li>Add more part-time job entries as needed</li>
-        </ul>
+        <div class="card-short-content">
+          <p>Part-time employment opportunities for high school and college students.</p>
+          <ul class="placeholder-list">
+            <li>Add part-time job 1 here</li>
+            <li>Add part-time job 2 here</li>
+          </ul>
+        </div>
+        <div class="card-full-content" style="display: none;">
+          <p>Part-time employment opportunities for high school and college students. These positions offer flexible schedules and valuable work experience.</p>
+          <ul class="placeholder-list">
+            <li>Add part-time job 1 here</li>
+            <li>Add part-time job 2 here</li>
+            <li>Add more part-time job entries as needed</li>
+          </ul>
+        </div>
+        <button class="card-expand-toggle">Read more</button>
+        <div class="card-actions">
+          <div class="share-buttons">
+            <a href="#" class="share-btn email" data-share="email" aria-label="Share via Email">📧</a>
+            <a href="#" class="share-btn copy" data-share="copy" aria-label="Copy link">🔗</a>
+          </div>
+        </div>
       </article>
 
-      <article class="card">
+      <article class="card card-expandable" data-filter="internships">
         <h3>Internships</h3>
-        <p>Internship opportunities to gain professional experience and build your resume.</p>
-        <ul class="placeholder-list">
-          <li>Add internship 1 here</li>
-          <li>Add internship 2 here</li>
-          <li>Add more internship entries as needed</li>
-        </ul>
+        <div class="card-short-content">
+          <p>Internship opportunities to gain professional experience and build your resume.</p>
+          <ul class="placeholder-list">
+            <li>Add internship 1 here</li>
+            <li>Add internship 2 here</li>
+          </ul>
+        </div>
+        <div class="card-full-content" style="display: none;">
+          <p>Internship opportunities to gain professional experience and build your resume. These programs help students explore career paths and develop industry skills.</p>
+          <ul class="placeholder-list">
+            <li>Add internship 1 here</li>
+            <li>Add internship 2 here</li>
+            <li>Add more internship entries as needed</li>
+          </ul>
+        </div>
+        <button class="card-expand-toggle">Read more</button>
+        <div class="card-actions">
+          <div class="share-buttons">
+            <a href="#" class="share-btn email" data-share="email" aria-label="Share via Email">📧</a>
+            <a href="#" class="share-btn copy" data-share="copy" aria-label="Copy link">🔗</a>
+          </div>
+        </div>
       </article>
 
-      <article class="card">
+      <article class="card card-expandable" data-filter="leadership">
         <h3>Leadership Roles</h3>
-        <p>Student leadership positions, board roles, and advocacy opportunities.</p>
-        <ul class="placeholder-list">
-          <li>Add leadership role 1 here</li>
-          <li>Add leadership role 2 here</li>
-          <li>Add more leadership role entries as needed</li>
-        </ul>
+        <div class="card-short-content">
+          <p>Student leadership positions, board roles, and advocacy opportunities.</p>
+          <ul class="placeholder-list">
+            <li>Add leadership role 1 here</li>
+            <li>Add leadership role 2 here</li>
+          </ul>
+        </div>
+        <div class="card-full-content" style="display: none;">
+          <p>Student leadership positions, board roles, and advocacy opportunities. These roles help develop leadership skills and make a positive impact in your community.</p>
+          <ul class="placeholder-list">
+            <li>Add leadership role 1 here</li>
+            <li>Add leadership role 2 here</li>
+            <li>Add more leadership role entries as needed</li>
+          </ul>
+        </div>
+        <button class="card-expand-toggle">Read more</button>
+        <div class="card-actions">
+          <div class="share-buttons">
+            <a href="#" class="share-btn email" data-share="email" aria-label="Share via Email">📧</a>
+            <a href="#" class="share-btn copy" data-share="copy" aria-label="Copy link">🔗</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Additional cards for "Load More" demonstration -->
+      <article class="card card-expandable" data-filter="jobs">
+        <h3>Retail Positions</h3>
+        <div class="card-short-content">
+          <p>Entry-level retail jobs perfect for students starting their work experience.</p>
+          <ul class="placeholder-list">
+            <li>Retail position 1</li>
+            <li>Retail position 2</li>
+          </ul>
+        </div>
+        <div class="card-full-content" style="display: none;">
+          <p>Entry-level retail jobs perfect for students starting their work experience.</p>
+          <ul class="placeholder-list">
+            <li>Retail position 1</li>
+            <li>Retail position 2</li>
+            <li>More retail opportunities</li>
+          </ul>
+        </div>
+        <button class="card-expand-toggle">Read more</button>
+        <div class="card-actions">
+          <div class="share-buttons">
+            <a href="#" class="share-btn email" data-share="email" aria-label="Share via Email">📧</a>
+            <a href="#" class="share-btn copy" data-share="copy" aria-label="Copy link">🔗</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card card-expandable" data-filter="internships">
+        <h3>Tech Internships</h3>
+        <div class="card-short-content">
+          <p>Technology internships for students interested in software development and IT.</p>
+          <ul class="placeholder-list">
+            <li>Tech internship 1</li>
+            <li>Tech internship 2</li>
+          </ul>
+        </div>
+        <div class="card-full-content" style="display: none;">
+          <p>Technology internships for students interested in software development and IT.</p>
+          <ul class="placeholder-list">
+            <li>Tech internship 1</li>
+            <li>Tech internship 2</li>
+            <li>More tech opportunities</li>
+          </ul>
+        </div>
+        <button class="card-expand-toggle">Read more</button>
+        <div class="card-actions">
+          <div class="share-buttons">
+            <a href="#" class="share-btn email" data-share="email" aria-label="Share via Email">📧</a>
+            <a href="#" class="share-btn copy" data-share="copy" aria-label="Copy link">🔗</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card card-expandable" data-filter="jobs">
+        <h3>Tutoring Opportunities</h3>
+        <div class="card-short-content">
+          <p>Flexible tutoring positions for students who excel academically.</p>
+          <ul class="placeholder-list">
+            <li>Tutoring position 1</li>
+            <li>Tutoring position 2</li>
+          </ul>
+        </div>
+        <div class="card-full-content" style="display: none;">
+          <p>Flexible tutoring positions for students who excel academically.</p>
+          <ul class="placeholder-list">
+            <li>Tutoring position 1</li>
+            <li>Tutoring position 2</li>
+            <li>More tutoring opportunities</li>
+          </ul>
+        </div>
+        <button class="card-expand-toggle">Read more</button>
+        <div class="card-actions">
+          <div class="share-buttons">
+            <a href="#" class="share-btn email" data-share="email" aria-label="Share via Email">📧</a>
+            <a href="#" class="share-btn copy" data-share="copy" aria-label="Copy link">🔗</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card card-expandable" data-filter="internships">
+        <h3>Non-Profit Internships</h3>
+        <div class="card-short-content">
+          <p>Internship opportunities with community organizations and non-profits.</p>
+          <ul class="placeholder-list">
+            <li>Non-profit internship 1</li>
+            <li>Non-profit internship 2</li>
+          </ul>
+        </div>
+        <div class="card-full-content" style="display: none;">
+          <p>Internship opportunities with community organizations and non-profits.</p>
+          <ul class="placeholder-list">
+            <li>Non-profit internship 1</li>
+            <li>Non-profit internship 2</li>
+            <li>More non-profit opportunities</li>
+          </ul>
+        </div>
+        <button class="card-expand-toggle">Read more</button>
+        <div class="card-actions">
+          <div class="share-buttons">
+            <a href="#" class="share-btn email" data-share="email" aria-label="Share via Email">📧</a>
+            <a href="#" class="share-btn copy" data-share="copy" aria-label="Copy link">🔗</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card card-expandable" data-filter="leadership">
+        <h3>Student Government</h3>
+        <div class="card-short-content">
+          <p>Positions in student government and student councils.</p>
+          <ul class="placeholder-list">
+            <li>Student government role 1</li>
+            <li>Student government role 2</li>
+          </ul>
+        </div>
+        <div class="card-full-content" style="display: none;">
+          <p>Positions in student government and student councils.</p>
+          <ul class="placeholder-list">
+            <li>Student government role 1</li>
+            <li>Student government role 2</li>
+            <li>More leadership opportunities</li>
+          </ul>
+        </div>
+        <button class="card-expand-toggle">Read more</button>
+        <div class="card-actions">
+          <div class="share-buttons">
+            <a href="#" class="share-btn email" data-share="email" aria-label="Share via Email">📧</a>
+            <a href="#" class="share-btn copy" data-share="copy" aria-label="Copy link">🔗</a>
+          </div>
+        </div>
       </article>
     </section>
+
+    <!-- Load More Button -->
+    <div class="load-more-wrapper">
+      <button class="load-more-btn">Load More</button>
+    </div>
   </main>
 
   <footer class="site-footer">
@@ -73,6 +274,7 @@
 
   <button type="button" class="back-to-top" aria-label="Back to top">↑</button>
   <script src="script.js"></script>
+  <script src="interactive.js"></script>
 </body>
 </html>
 

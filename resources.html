@@ -9,6 +9,9 @@
 </head>
 <body>
   <header class="site-header">
+    <a class="header-logo" href="index.html" aria-label="Youth Against Substances home">
+      <img src="yas-logo.png.png" alt="Youth Against Substances logo">
+    </a>
     <div class="logo-title">
       <h1>Youth Against Substances (YAS)</h1>
       <p class="subtitle">Opportunities and resources for underserved students</p>
@@ -33,30 +36,97 @@
       </p>
     </section>
 
+    <!-- Search and Filter Section -->
+    <section class="search-filter-section">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" placeholder="Search resources...">
+        <span class="search-icon">🔍</span>
+      </div>
+      <div class="filter-tags">
+        <button class="filter-tag active" data-filter="all">All</button>
+        <button class="filter-tag" data-filter="wellness">Mental Health & Wellness</button>
+        <button class="filter-tag" data-filter="staff">School Staff & Teachers</button>
+        <button class="filter-tag" data-filter="community">Community & Online Support</button>
+      </div>
+    </section>
+
     <section class="cards-grid">
-      <article class="card">
+      <article class="card card-expandable" data-filter="wellness">
         <h3>Mental Health & Wellness</h3>
-        <ul class="placeholder-list">
-          <li>Add school counselor information here</li>
-          <li>Add local or national hotlines here</li>
-          <li>Add trusted online resources here</li>
-        </ul>
+        <div class="card-short-content">
+          <p>Resources for mental health support and wellness.</p>
+          <ul class="placeholder-list">
+            <li>Add school counselor information here</li>
+            <li>Add local or national hotlines here</li>
+          </ul>
+        </div>
+        <div class="card-full-content" style="display: none;">
+          <p>Resources for mental health support and wellness.</p>
+          <ul class="placeholder-list">
+            <li>Add school counselor information here</li>
+            <li>Add local or national hotlines here</li>
+            <li>Add trusted online resources here</li>
+          </ul>
+        </div>
+        <button class="card-expand-toggle">Read more</button>
+        <div class="card-actions">
+          <div class="share-buttons">
+            <a href="#" class="share-btn email" data-share="email" aria-label="Share via Email">📧</a>
+            <a href="#" class="share-btn copy" data-share="copy" aria-label="Copy link">🔗</a>
+          </div>
+        </div>
       </article>
 
-      <article class="card">
+      <article class="card card-expandable" data-filter="staff">
         <h3>School Staff & Teachers</h3>
-        <ul class="placeholder-list">
-          <li>Add supportive teachers or staff names here</li>
-          <li>Add office hours or contact info (if they approve)</li>
-        </ul>
+        <div class="card-short-content">
+          <p>Supportive teachers and staff members available to help students.</p>
+          <ul class="placeholder-list">
+            <li>Add supportive teachers or staff names here</li>
+            <li>Add office hours or contact info (if they approve)</li>
+          </ul>
+        </div>
+        <div class="card-full-content" style="display: none;">
+          <p>Supportive teachers and staff members available to help students.</p>
+          <ul class="placeholder-list">
+            <li>Add supportive teachers or staff names here</li>
+            <li>Add office hours or contact info (if they approve)</li>
+            <li>Additional support information</li>
+          </ul>
+        </div>
+        <button class="card-expand-toggle">Read more</button>
+        <div class="card-actions">
+          <div class="share-buttons">
+            <a href="#" class="share-btn email" data-share="email" aria-label="Share via Email">📧</a>
+            <a href="#" class="share-btn copy" data-share="copy" aria-label="Copy link">🔗</a>
+          </div>
+        </div>
       </article>
 
-      <article class="card">
+      <article class="card card-expandable" data-filter="community">
         <h3>Community & Online Support</h3>
-        <ul class="placeholder-list">
-          <li>Add community organizations here</li>
-          <li>Add online communities or forums you trust</li>
-        </ul>
+        <div class="card-short-content">
+          <p>Community organizations and online resources for additional support.</p>
+          <ul class="placeholder-list">
+            <li>Add community organizations here</li>
+            <li>Add online communities or forums you trust</li>
+          </ul>
+        </div>
+        <div class="card-full-content" style="display: none;">
+          <p>Community organizations and online resources for additional support.</p>
+          <ul class="placeholder-list">
+            <li>Add community organizations here</li>
+            <li>Add online communities or forums you trust</li>
+            <li>Additional community resources</li>
+          </ul>
+        </div>
+        <button class="card-expand-toggle">Read more</button>
+        <div class="card-actions">
+          <div class="share-buttons">
+            <a href="#" class="share-btn email" data-share="email" aria-label="Share via Email">📧</a>
+            <a href="#" class="share-btn copy" data-share="copy" aria-label="Copy link">🔗</a>
+          </div>
+        </div>
       </article>
     </section>
   </main>
@@ -67,6 +137,7 @@
 
   <button type="button" class="back-to-top" aria-label="Back to top">↑</button>
   <script src="script.js"></script>
+  <script src="interactive.js"></script>
 </body>
 </html>
 
